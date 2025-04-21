@@ -2,538 +2,568 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Red Goat - Event Management</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Red Goat" name="keywords">
-    <meta content="Event Management" name="description">
+  <meta charset="utf-8">
+  <title>Red Goat - Event Management</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Red Goat" name="keywords">
+  <meta content="Event Management" name="description">
 
-    <!-- Favicon -->
-    <link href="https://nanismarty.github.io/RedGoat/img/favicon.ico" rel="icon">
+  <link rel="icon" href="./Source/SVG/Redgoat_EM-RED.svg">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet"> 
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <!-- <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-black py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <h1 class="font-secondary text-white mb-n2">Red Goat</h1>
+<body>
+    <!-- Header -->
+  <div class="scroll-watcher"></div>
+
+  <script>
+    const scrollWatcher = document.querySelector('.scroll-watcher');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollWatcher.style.width = `${scrollPercent}%`;
+    });
+  </script>
+
+
+  <!-- Nav Section -->
+  <div class="Nav-section">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <img src="./Source/SVG/Redgoat.png" alt="Logo" />
         </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#">Home</a></li>
+          <li><a href="#our-service">Service</a></li>
+          <li><a href="#Gallery">Gallery</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <li><a href="#About_us">About Us</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("show");
+      });
+    </script>
+  </div>
+
+  <!-- Mainbody -->
+
+  <!-- carousel section -->
+  <div class="Carousel" style="background-color: #111;">
+    <div class="Section-1 container my-0">
+      <div id="carouselDemo" class="carousel slide" data-bs-wrap="true" data-bs-ride="carousel">
+
+        <!-- Slides -->
+        <div class="carousel-inner main-banner" style="height: 700px;">
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img src="./Source/SVG/Sample 1.jpg" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="./Source/SVG/Sample 2.jpg" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="./Source/SVG/Sample 3.jpg" class="d-block w-100" alt="Slide 3">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="./Source/SVG/Sample 6.jpg" class="d-block w-100" alt="Slide 4">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="./Source/SVG/Sample 7.jpg" class="d-block w-100" alt="Slide 5">
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDemo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-            <div class="navbar-nav ml-auto py-3 px-5">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#story" class="nav-item nav-link">Story</a>
-                <a href="#gallery" class="nav-item nav-link">Gallery</a>
-                <a href="#event" class="nav-item nav-link">Event</a>
-                <a href="#family" class="nav-item nav-link">Family</a>
-                <a href="#rsvp" class="nav-item nav-link">Join</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
-                <h1 class="text-red mb-n2">RedGoat</h1>
-                 <img src="https://nanismarty.github.io/RedGoat/img/logo.png" style="height: 65px;"/>
-            </a>
-            <div class="navbar-nav mr-auto py-0 px-5">
-                
-            </div>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDemo" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+
+        <!-- Indicators with thumbnails -->
+        <div class="carousel-indicators" >
+          <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="0" class="active" aria-current="true">
+            <img src="./Source/SVG/Sample 1.jpg" alt="Thumb 1">
+          </button>
+          <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1">
+            <img src="./Source/SVG/Sample 2.jpg" alt="Thumb 2">
+          </button>
+          <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2">
+            <img src="./Source/SVG/Sample 3.jpg" alt="Thumb 3">
+          </button>
+          <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3">
+            <img src="./Source/SVG/Sample 6.jpg" alt="Thumb 4">
+          </button>
+          <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="4">
+            <img src="./Source/SVG/Sample 7.jpg" alt="Thumb 5">
+          </button>
         </div>
-    </nav> -->
-    <!-- Navbar End -->
 
-
-    <!-- Carousel Start -->
-    <!-- <div class="container-fluid p-0 mb-5 pb-5" id="home">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item position-relative active" style="height: 100vh; min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="img/carousel-1.jpg" style="object-fit: cover;">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h1 class="display-1 text-red mt-n3 mb-md-4">RedGoat</h1>
-                            <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">We're getting married</h3>
-                            </div>
-                            <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                                data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item position-relative" style="height: 100vh; min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="img/carousel-2.jpg" style="object-fit: cover;">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">Jack & Rose</h1>
-                            <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">We're getting married</h3>
-                            </div>
-                            <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                                data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev justify-content-start" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
-                    <span class="carousel-control-prev-icon mt-3"></span>
-                </div>
-            </a>
-            <a class="carousel-control-next justify-content-end" href="#header-carousel" data-slide="next">
-                <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
-                    <span class="carousel-control-next-icon mt-3"></span>
-                </div>
-            </a>
-        </div>
-    </div> -->
-    <!-- Carousel End -->
-
-
-    <!-- Video Modal Start -->
-    <!-- <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>         -->
-                    <!-- 16:9 aspect ratio -->
-                    <!-- <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Video Modal End -->
-
-
-    <!-- About Start -->
-    <!-- <div class="container-fluid py-5" id="about">
-        <div class="container py-5">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">About</h6>
-                <h1 class="font-secondary display-4">Groom & Bride</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row m-0 mb-4 mb-md-0 pb-2 pb-md-0">
-                <div class="col-md-6 p-0 text-center text-md-right">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
-                        <h3 class="mb-3">The Groom</h3>
-                        <p>Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
-                        <h3 class="font-secondary font-weight-normal text-muted mb-3"><i class="fa fa-male text-primary pr-3"></i>Jack</h3>
-                        <div class="position-relative">
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 p-0" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="img/about-1.jpg" style="object-fit: cover;">
-                </div>
-            </div>
-            <div class="row m-0">
-                <div class="col-md-6 p-0" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="img/about-2.jpg" style="object-fit: cover;">
-                </div>
-                <div class="col-md-6 p-0 text-center text-md-left">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
-                        <h3 class="mb-3">The Bride</h3>
-                        <p>Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
-                        <h3 class="font-secondary font-weight-normal text-muted mb-3"><i class="fa fa-female text-primary pr-3"></i>Rose</h3>
-                        <div class="position-relative">
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- About End -->
-
-
-    <!-- Story Start -->
-    <!-- <div class="container-fluid py-5" id="story">
-        <div class="container pt-5 pb-3">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Story</h6>
-                <h1 class="font-secondary display-4">Our Love Story</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="container timeline position-relative p-0">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <img class="img-fluid mr-md-3" src="img/story-1.jpg" alt="">
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                            <h4 class="mb-2">First Meet</h4>
-                            <p class="text-uppercase mb-2">01 Jan 2050</p>
-                            <p class="m-0">Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                            <h4 class="mb-2">First Date</h4>
-                            <p class="text-uppercase mb-2">01 Jan 2050</p>
-                            <p class="m-0">Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <img class="img-fluid ml-md-3" src="img/story-2.jpg" alt="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <img class="img-fluid mr-md-3" src="img/story-3.jpg" alt="">
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                            <h4 class="mb-2">Proposal</h4>
-                            <p class="text-uppercase mb-2">01 Jan 2050</p>
-                            <p class="m-0">Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                            <h4 class="mb-2">Enagagement</h4>
-                            <p class="text-uppercase mb-2">01 Jan 2050</p>
-                            <p class="m-0">Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <img class="img-fluid ml-md-3" src="img/story-4.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Story End -->
-
-
-    <!-- Gallery Start -->
-    <div class="container-fluid bg-gallery" id="gallery" style="padding: 120px 0;">
-        <div class="section-title position-relative text-center" style="margin-bottom: 120px;">
-            <!-- <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Gallery</h6> -->
-            <h1 class="font-secondary display-4 text-white">An Event Experience Like No Other <br> Going Live Soon </h1>
-            <i class="far fa-heart text-white"></i>
-        </div>
-        <!-- <div class="owl-carousel gallery-carousel">
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/gallery-1.jpg" alt="">
-                <a href="https://nanismarty.github.io/RedGoat/img/gallery-1.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/gallery-2.jpg" alt="">
-                <a href="https://nanismarty.github.io/RedGoat/img/gallery-2.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/gallery-3.jpg" alt="">
-                <a href="https://nanismarty.github.io/RedGoat/img/gallery-3.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/gallery-4.jpg" alt="">
-                <a href="https://nanismarty.github.io/RedGoat/img/gallery-4.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/gallery-5.jpg" alt="">
-                <a href="https://nanismarty.github.io/RedGoat/img/gallery-5.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/gallery-6.jpg" alt="">
-                <a href="https://nanismarty.github.io/RedGoat/img/gallery-6.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-        </div> -->
+      </div>
     </div>
-    <!-- Gallery End -->
+  </div>
 
 
-    <!-- Event Start -->
-    <div class="container-fluid py-5" id="event">
-        <div class="container py-5">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Event</h6>
-                <h1 class="font-secondary display-4">Our Wedding Event</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <h5 class="font-weight-normal text-muted mb-3 pb-3">We are beyond excited to invite you to witness and share in the joy of our wedding celebration. This day marks not just a union of two hearts, but a gathering of love, laughter, family, and friends who have been part of our story</h5>
-                </div>
-            <!-- </div>
-             <div class="row">
-                <div class="col-md-6 border-right border-primary">
-                    <div class="text-center text-md-right mr-md-3 mb-4 mb-md-0">
-                        <img class="img-fluid mb-4" src="https://nanismarty.github.io/RedGoat/img/event-1.jpg" alt="">
-                        <h4 class="mb-3">The Reception</h4>
-                        <p class="mb-2">123 Street, New York, USA</p>
-                        <p class="mb-0">12:00AM - 13:00PM</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="text-center text-md-left ml-md-3">
-                        <img class="img-fluid mb-4" src="https://nanismarty.github.io/RedGoat/img/event-2.jpg" alt="">
-                        <h4 class="mb-3">Wedding Party</h4>
-                        <p class="mb-2">123 Street, New York, USA</p>
-                        <p class="mb-0">12:00AM - 13:00PM</p>
-                    </div>
-                </div>
-            </div> -->
-        </div>
+  <!-- Infinite Scroll Animation -->
+
+  <div class="infinite-scroll-banner">
+    <div class="scrolling-track">
+      <div class="scrolling-text">
+        <span> Red Goat Eventz | Red Goat Eventz | Red Goat Eventz | Red Goat Eventz | </span>
+        <span>Red Goat Eventz | Red Goat Eventz | Red Goat Eventz | Red Goat Eventz | </span>
+        <span>Red Goat Eventz | Red Goat Eventz | Red Goat Eventz | Red Goat Eventz | </span>
+        <span>Red Goat Eventz | Red Goat Eventz | Red Goat Eventz | Red Goat Eventz | </span>
+      </div>
     </div>
-    <!-- Event End -->
+  </div>
 
 
-    <!-- Friends & Family Start -->
-    <div class="container-fluid py-5" id="family">
-        <div class="container pt-5 pb-3">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Friends & Family</h6>
-                <h1 class="font-secondary display-4">Groomsmen & Bridesmaid</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center mb-2">
-                    <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" data-filter=".first">Groomsmen</li>
-                        <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" data-filter=".second">Bridesmaid</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/groomsmen-1.jpg" alt="">
-                        <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">Full Name</h4>
-                            <p class="text-uppercase">Best Friend</p>
-                            <div class="d-inline-block">
-                                <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/bridesmaid-1.jpg" alt="">
-                        <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">Full Name</h4>
-                            <p class="text-uppercase">Best Friend</p>
-                            <div class="d-inline-block">
-                                <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/groomsmen-2.jpg" alt="">
-                        <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">Full Name</h4>
-                            <p class="text-uppercase">Best Friend</p>
-                            <div class="d-inline-block">
-                                <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/bridesmaid-2.jpg" alt="">
-                        <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">Full Name</h4>
-                            <p class="text-uppercase">Best Friend</p>
-                            <div class="d-inline-block">
-                                <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/groomsmen-3.jpg" alt="">
-                        <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">Full Name</h4>
-                            <p class="text-uppercase">Best Friend</p>
-                            <div class="d-inline-block">
-                                <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="https://nanismarty.github.io/RedGoat/img/bridesmaid-3.jpg" alt="">
-                        <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">Full Name</h4>
-                            <p class="text-uppercase">Best Friend</p>
-                            <div class="d-inline-block">
-                                <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+
+  <!-- our Service -->
+  <div class="our-service" id="our-service">
+    <section class="services-section container my-4">
+      <h2 class="text-center mb-5">Our Services</h2>
+      <div class="row g-4">
+
+        <!-- Service Card 1 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="service-card">
+            <img src="./Source/SVG/Sample 1.jpg" alt="Wedding" />
+            <div class="service-title">Weddings</div>
+          </div>
         </div>
+
+        <!-- Service Card 2 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="service-card">
+            <img src="./Source/SVG/Sample 1.jpg" alt="Birthday" />
+            <div class="service-title">Birthdays</div>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="service-card">
+            <img src="./Source/SVG/Sample 1.jpg" alt="Corporate" />
+            <div class="service-title">Corporate Events</div>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="service-card">
+            <img src="./Source/SVG/Sample 1.jpg" alt="Catering" />
+            <div class="service-title">Catering</div>
+          </div>
+        </div>
+
+        <!-- Service Card 5 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="service-card">
+            <img src="./Source/SVG/Sample 1.jpg" alt="Music" />
+            <div class="service-title">Live Music</div>
+          </div>
+        </div>
+
+        <!-- Service Card 6 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="service-card">
+            <img src="./Source/SVG/Sample 1.jpg" alt="Decor" />
+            <div class="service-title">Decorations</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+  <!-- Feedback -->
+  <div class="Feedback">
+    <section class="testimonials-section container-fluid py-3">
+      <h2 class="text-center mb-4">What Our Clients Say</h2>
+
+      <div class="testimonial-scroll-wrapper">
+        <div class="testimonial-track">
+
+          <!-- Repeat testimonial-card x8 (sample data) -->
+          <div class="testimonial-card">
+            <img src="./Source/SVG/Client 1.jpg" alt="Client 1">
+            <h5>Priya Sharma</h5>
+            <p>Chennai</p>
+            <p>"Red Goat Eventz made our wedding unforgettable. The team was professional and creative! I’ll definitely use Red Goat Eventz again. Impeccable taste and organization."</p>
+          </div>
+
+          <div class="testimonial-card">
+            <img src="./Source/SVG/Client 2.jpg" alt="Client 2">
+            <h5>Arjun Mehta</h5>
+            <p>Chennai</p>
+            <p>"From décor to catering, everything was flawless. Highly recommend their services. I’ll definitely use Red Goat Eventz again. Impeccable taste and organization."</p>
+          </div>
+
+          <div class="testimonial-card">
+            <img src="./Source/SVG/Client 3.jpg" alt="Client 3">
+            <h5>Sneha Iyer</h5>
+            <p>Chennai</p>
+            <p>"They handled our corporate event so smoothly. Truly stress-free experience! I’ll definitely use Red Goat Eventz again. Impeccable taste and organization."</p>
+          </div>
+
+          <div class="testimonial-card">
+            <img src="./Source/SVG/Client 4.jpg" alt="Client 4">
+            <h5>Ravi Patel</h5>
+            <p>Chennai</p>
+            <p>"Outstanding service! They made our daughter's birthday so special. I’ll definitely use Red Goat Eventz again. Impeccable taste and organization."</p>
+          </div>
+
+          <div class="testimonial-card">
+            <img src="./Source/SVG/Client 5.jpg" alt="Client 5">
+            <h5>Meena Rao</h5>
+            <p>Chennai</p>
+            <p>"Excellent food and flawless decor. Highly recommended team! I’ll definitely use Red Goat Eventz again. Impeccable taste and organization."</p>
+          </div>
+
+          <div class="testimonial-card">
+            <img src="./Source/SVG/Client 6.jpg" alt="Client 6">
+            <h5>Rakesh Khanna</h5>
+            <p>Chennai</p>
+            <p>"They handled the entire event start to finish without a hiccup! I’ll definitely use Red Goat Eventz again. Impeccable taste and organization."</p>
+          </div>
+
+          <div class="testimonial-card">
+            <img src="./Source/SVG/Client 7.jpg" alt="Client 7">
+            <h5>Tanvi Desai</h5>
+            <p>Chennai</p>
+            <p>"I’ll definitely use Red Goat Eventz again. Impeccable taste and organization.I’ll definitely use Red Goat Eventz again. Impeccable taste and organization."</p>
+          </div>
+
+          <div class="testimonial-card">
+            <img src="./Source/SVG/Client 8.jpg" alt="Client 8">
+            <h5>Kunal Joshi</h5>
+            <p>Chennai</p>
+            <p>"Our anniversary event was magical. Everything was just perfect! I’ll definitely use Red Goat Eventz again. Impeccable taste and organization."</p>
+          </div>
+
+          <!-- Duplicate set for seamless loop -->
+          <!-- You can duplicate all above if needed for smooth infinite scroll -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Gallery -->
+  <div class="Gallery" id="Gallery">
+    <section id="gallery" class="gallery-section py-1">
+      <div class="container">
+        <h2 class="text-center mb-4">Gallery</h2>
+        <div class="masonry-grid">
+          <img src="./Source/SVG/Client 1.jpg" alt="Gallery" class="grid-item">
+          <img src="./Source/SVG/Client 2.jpg" alt="Gallery" class="grid-item">
+          <img src="./Source/SVG/Client 3.jpg" alt="Gallery" class="grid-item">
+          <img src="./Source/SVG/Client 4.jpg" alt="Gallery" class="grid-item tall">
+          <img src="./Source/SVG/Client 5.jpg" alt="Gallery" class="grid-item">
+          <img src="./Source/SVG/Client 6.jpg" alt="Gallery" class="grid-item wide">
+          <img src="./Source/SVG/Client 7.jpg" alt="Gallery" class="grid-item">
+          <img src="./Source/SVG/Client 8.jpg" alt="Gallery" class="grid-item tall">
+          <img src="./Source/SVG/Client 9.jpg" alt="Gallery" class="grid-item">
+          <img src="./Source/SVG/Client 10.jpg" alt="Gallery" class="grid-item wide">
+          <img src="./Source/SVG/Client 11.jpg" alt="Gallery" class="grid-item">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal for image popup -->
+  <div class="img-modal" id="imgModal">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <img class="img-modal-content" id="modalImage" alt="Full View">
+  </div>
+
+  <!-- JavaScript -->
+<script>
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.getElementById("closeModal");
+
+  document.querySelectorAll(".masonry-grid img").forEach(image => {
+    image.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = image.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Optional: Close modal if you click outside the image
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+  
+
+  <!-- Why us -->
+  <div class="Why_us">
+    <section id="why-us" class="py-1">
+      <div class="container">
+        <h2 class="text-center mb-4">Why Us?</h2>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            <span>Experienced Event Planners</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Our seasoned team brings years of expertise across weddings, birthdays, corporate events, and more. We know
+            what works—and how to make your event unforgettable.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            <span>Customizable Packages</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            No two events are the same. Choose from a range of flexible packages tailored to fit your needs, style, and
+            budget perfectly.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            <span>End-to-End Services</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            From concept to clean-up, we take care of everything — venue, catering, entertainment, décor, logistics, and
+            more — so you don’t have to worry.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            <span>Creative & Unique Themes</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Want something elegant, quirky, or totally out-of-the-box? We specialize in bringing creative ideas to life
+            with stunning visual impact.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            <span>Stress-Free Planning</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Relax and enjoy your event. Our smooth coordination, attention to detail, and proactive problem-solving
+            ensure everything runs seamlessly.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            <span>Client-First Approach</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Your satisfaction is our top priority. We listen, we adapt, and we deliver — making sure your vision becomes
+            a reality, just the way you imagined.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function toggleAnswer(button) {
+      const allButtons = document.querySelectorAll('.faq-question');
+      const allAnswers = document.querySelectorAll('.faq-answer');
+
+      allButtons.forEach(btn => {
+        if (btn !== button) {
+          btn.classList.remove('active');
+          btn.querySelector('.icon').textContent = '+';
+        }
+      });
+
+      allAnswers.forEach(ans => {
+        if (ans !== button.nextElementSibling) {
+          ans.style.display = 'none';
+        }
+      });
+
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('.icon');
+
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        button.classList.remove('active');
+        icon.textContent = '+';
+      } else {
+        answer.style.display = 'block';
+        button.classList.add('active');
+        icon.textContent = '✕';
+      }
+    }
+  </script>
+
+
+  <!-- Contact -->
+  <div class="Contact" id="Contact">
+    <section id="contact" class="contact-section">
+      <h2 class="text-center">Contact</h2>
+      <div class="contact-grid">
+        <!-- Form Section -->
+        <form class="contact-form">
+          <div class="form-grid">
+            <input type="text" placeholder="Name" required />
+            <input type="number" placeholder="Phone" required />
+            <input type="email" placeholder="Email" required />
+            <select required>
+              <option value="">Select Event</option>
+              <option value="wedding">Wedding</option>
+              <option value="birthday">Birthday</option>
+              <option value="corporate">Decorations</option>
+              <option value="corporate">Catering</option>
+              <option value="corporate">Photography</option>
+              <option value="corporate">Makeup</option>
+              <option value="corporate">Entertainment</option>
+              <option value="corporate">Venue</option>
+            </select>
+            <input type="date" required />
+            <input type="text" placeholder="Location" required />
+            <textarea placeholder="Tell us more about the Event *" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <!-- Image Section -->
+        <div class="contact-image">
+          <img src="./Source/SVG/Sample 1.jpg" alt="Event Image" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- About us -->
+  <div class="About_us" id="About_us">
+    <section id="about" class="about-section">
+      <h2 class="text-center">About Us</h2>
+      <div class="about-container">
+        <!-- Left Image -->
+        <div class="about-image">
+          <img src="./Source/SVG/Sample 7.jpg" alt="About Us Image" />
+        </div>
+
+        <!-- Right Text -->
+        <div class="about-text">
+          <p>
+            At Red Goat, we believe every event deserves to be unforgettable. With over 50 successful
+            events in just 1+ year, we’ve built a reputation for delivering seamless, stylish, and
+            joy-filled celebrations.
+          </p>
+          <p>
+            From stunning decorations to delicious catering, perfect venues to memorable photography,
+            we take care of every detail. Need gorgeous invitations, flawless makeup, or lively
+            entertainment? We’ve got you covered.
+          </p>
+          <p>
+            Our team blends creativity with precision, making sure your event feels personal, polished,
+            and perfectly you. Whether it’s a dreamy wedding or a family get-together, we’re here to
+            make it stress-free and spectacular.
+          </p>
+          <p>Let’s create something beautiful—together.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#our-service">Service</a></li>
+          <li><a href="#Gallery">Gallery</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <li><a href="#About_us">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Our Services -->
+      <div class="footer-column">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="">Decorations</a></li>
+          <li><a href="">Catering</a></li>
+          <li><a href="">Venue</a></li>
+          <li><a href="">Photography</a></li>
+          <li><a href="">Invitations</a></li>
+          <li><a href="">Makeup</a></li>
+          <li><a href="">Entertainment</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul class="contact-list">
+          <li><i class="fa-brands fa-whatsapp"></i> +91 896 986 9886</li>
+          <li><i class="fa-solid fa-envelope"></i> redgoateventz@gmail.com</li>
+          <li><i class="fa-solid fa-location-dot"></i> 123, abc street, abcdefgh,<br />Chennai – 600003</li>
+        </ul>
+      </div>
+
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="./Source/SVG/Redgoat vertical logo.svg" alt="Red Goat Logo" />
+      </div>
     </div>
-    <!-- Friends & Family End -->
 
-
-    <!-- RSVP Start -->
-    <!-- <div class="container-fluid py-5" id="rsvp">
-        <div class="container py-5">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">RSVP</h6>
-                <h1 class="font-secondary display-4">Join Our Party</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3" placeholder="Your Name"/>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <input type="email" class="form-control bg-secondary border-0 py-4 px-3" placeholder="Your Email"/>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-sm-6">
-                                    <select class="form-control bg-secondary border-0" style="height: 52px;">
-                                        <option>Number of Guest</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <select class="form-control bg-secondary border-0" style="height: 52px;">
-                                        <option>I'm Attending</option>
-                                        <option>All Events</option>
-                                        <option>Wedding Party</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="5" placeholder="Message" required="required"></textarea>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- RSVP End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white py-5" id="contact" style="margin-top: 90px;">
-        <div class="container text-center py-5">
-            <div class="section-title position-relative text-center">
-                <h1 class="font-secondary display-3 text-white">Thank You</h1>
-                <i class="far fa-heart text-white"></i>
-            </div>
-            <div class="d-flex justify-content-center mb-4">
-                <!-- <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a> -->
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.facebook.com/people/Red-Goat-Event-management/61568818856176/?mibextid=wwXIfr&rdid=a5b11PLeZBBcW0J7&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16EryrGSRN%2F%3Fmibextid%3DwwXIfr"><i class="fab fa-facebook-f"></i></a>
-                <!-- <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a> -->
-                <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.instagram.com/accounts/login/?next=%2Fredgoateventmanagement%2F&source=omni_redirect"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="d-flex justify-content-center py-2">
-                <p class="text-white" href="#">redgoateventz.com</p>
-                <span class="px-3">|</span>
-                <p class="text-white" href="#">+91 988 433 06 11</p>
-            </div>
-            <p class="m-0">&copy; <a class="text-primary" href="#">2025 Red Goat Event Management</a>
-            <!-- Designed by <a class="text-primary" href="https://redgoateventz.com">Redgoateventz</a> -->
-            </p>
-        </div>
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      @ Copyright 2025 Red Goat Eventz All Rights Reserved.
     </div>
-    <!-- Footer End -->
+  </footer>
 
 
-    <!-- Scroll to Bottom -->
-    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <!-- <script src="lib/owlcarousel/owl.carousel.min.js"></script> -->
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <!-- Script -->
+  <script src="script.js"></script>
+  <!-- bootstrap -->
+  <script src="./js/bootstrap.bundle.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+
 </body>
 
 </html>
