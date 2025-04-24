@@ -431,32 +431,30 @@
     }
   </script>
 
-
-  <!-- Contact -->
   <div class="Contact" id="Contact">
     <section id="contact" class="contact-section">
       <h2 class="text-center">Contact</h2>
       <div class="contact-grid">
         <!-- Form Section -->
-        <form class="contact-form">
+        <form class="contact-form" action="https://formspree.io/f/xqaqkoyw" method="POST">
           <div class="form-grid">
-            <input type="text" placeholder="Name" required />
-            <input type="number" placeholder="Phone" required />
-            <input type="email" placeholder="Email" required />
-            <select required>
+            <input type="text" name="Name" placeholder="Name" required />
+            <input type="number" name="Phone" placeholder="Phone" required />
+            <input type="email" name="Email" placeholder="Email" required />
+            <select name="Event" required>
               <option value="">Select Event</option>
               <option value="wedding">Wedding</option>
               <option value="birthday">Birthday</option>
-              <option value="corporate">Decorations</option>
-              <option value="corporate">Catering</option>
-              <option value="corporate">Photography</option>
-              <option value="corporate">Makeup</option>
-              <option value="corporate">Entertainment</option>
-              <option value="corporate">Venue</option>
+              <option value="decorations">Decorations</option>
+              <option value="catering">Catering</option>
+              <option value="photography">Photography</option>
+              <option value="makeup">Makeup</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="venue">Venue</option>
             </select>
-            <input type="date" required />
-            <input type="text" placeholder="Location" required />
-            <textarea placeholder="Tell us more about the Event *" rows="4" required></textarea>
+            <input type="date" name="Date" required />
+            <input type="text" name="Location" placeholder="Location" required />
+            <textarea name="Message" placeholder="Tell us more about the Event *" rows="4" required></textarea>
           </div>
           <button type="submit" class="submit-btn">Submit</button>
         </form>
