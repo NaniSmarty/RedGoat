@@ -1,20 +1,3 @@
-
-
-// carousel section
-
-
-
-// Infinite Scroll Animation
-
-
-
-// Gallery
-
-
-// why us
-  
-// Dom connect function
-
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll('a[href^="#"]');
 

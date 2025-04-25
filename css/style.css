@@ -1,8 +1,12 @@
+@font-face {
+  font-family: "Lato";
+  src: url(../Source/Font/Lato-Regular.ttf);
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:wght@300;400;700;900&display=swap');
-
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@font-face {
+  font-family: "DancingScript";
+  src: url(../Source/Font/DancingScript-Regular.ttf);
+}
 
 
 
@@ -20,7 +24,7 @@
   
   
   body {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato";
        
   }
   
@@ -32,13 +36,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 10px;
+    height: 6px;
     background-color: #a00000; /* Red tone */
     width: 0%;
     z-index: 9999;
     transition: width 0.2s ease-out;
     opacity: 0;
     animation: fadeIn 0.5s forwards;
+    border-radius: 50px;
   }
 
   @keyframes fadeIn {
@@ -168,12 +173,18 @@
   .Carousel{
     padding-top: 90px;
     padding-bottom: 120px;
-
   }
+
+  .main-banner{
+    width: 100% !important;
+  }
+
+
 
  .carousel-indicators img{
     width: 150px;
     display: block;
+
     /* border-radius: 10px; */
     /* margin-top: 10px; */
   }
@@ -182,15 +193,40 @@
 }
 .carousel-indicators{
     position: unset;
-    margin-top: 10px;
+    margin: 10px;
+    /* width: 80% !important; */
+
 }
 
 @media (max-width: 768px) {
   .main-banner{
     height: fit-content !important;
+    width: 100% !important;
+  }
+  .Carousel{
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  .carousel-indicators{
+    position: unset;
+    margin: 1rem auto !important;
+    width: 80% !important;
+  }
+
+  .carousel-indicators img{
+    width: 80px;
+    display: block;
   }
 }
 
+@media (max-width: 1400px) {
+  .main-banner{
+    height: fit-content !important;
+    width: 100% !important;
+  }
+
+}
 
 /* Infinite Scroll Animation */
 
@@ -216,7 +252,7 @@
   
   .scrolling-text span {
     color: white;
-    font-family: "Lato", sans-serif;
+    font-family: "Lato";
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -243,9 +279,9 @@
   }
 
   .our-service h2{
-    font-size: 40px;
-    font-weight: 800;
-    font-family: "Dancing Script", cursive;
+    font-size: 50px;
+    font-weight: 200;
+    font-family: "DancingScript";
     pointer-events: none;
   }
 
@@ -280,7 +316,8 @@
     padding: 12px;
     text-align: center;
     font-size: 1.1rem;
-    font-family: "Lato", sans-serif;
+    font-family: "Lato";
+    letter-spacing: 1.5px;
     font-weight: 800;
     text-transform: uppercase;
     transition: bg 0.3s ease;
@@ -290,7 +327,23 @@
   .service-card:hover img {
     transform: scale(1.1);
   }
-  
+  .service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card:hover::after {
+    opacity: 1;
+  }
+
   .service-card:hover .service-title {
     background: rgba(160, 0, 0, 0.8);
   }
@@ -329,9 +382,9 @@
   /* Feedback */
 
   .Feedback h2{
-    font-size: 40px;
-    font-weight: 800;
-    font-family: "Dancing Script", cursive;
+    font-size: 50px;
+    font-weight: 200;
+    font-family: "DancingScript";
     pointer-events: none;
     padding-top: 20px;
   }
@@ -368,7 +421,25 @@
   
   .testimonial-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 25px rgba(193, 180, 1, 0.12);
+  }
+
+  .testimonial-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 40%, rgba(193, 180, 1, 0.5) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .testimonial-card:hover::after {
+    opacity: 1;
   }
   
   .testimonial-card img {
@@ -409,7 +480,7 @@
     background: linear-gradient(45deg, #a00000, #cf1919, #1e90ff, #00b894, #fbc926, #cb9f3c, #e2c36f);
     background-size: 400% 400%;
     animation: rotateGradient 20s ease infinite;
-    height: 75vh; /* Adjust height as needed */
+    height: 520px; /* Adjust height as needed */
     width: 100%;
     display: block;
     align-items: center;
@@ -442,12 +513,19 @@
     }
   
     .testimonial-track {
-      flex-direction: column;
-      animation: none;
-      gap: 20px;
-      width: 100%;
+      gap: 10px;
+      width: 80%;
     }
-  
+
+
+    @keyframes scrollTestimonials {
+      0% {
+        transform: translateX(10%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
     .testimonial-card {
       width: 90%;
       max-width: 320px;
@@ -474,9 +552,9 @@
   }
 
   .Gallery h2 {
-    font-size: 40px;
-    font-weight: 800;
-    font-family: "Dancing Script", cursive;
+    font-size: 50px;
+    font-weight: 200;
+    font-family: "DancingScript";
     pointer-events: none;
     display: block;
     padding: 20px;
@@ -538,16 +616,53 @@
     border-radius: 10px;
   }
 
-  .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    font-size: 40px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10000;
-  }
+  /* Common button styles */
+.nav-btn, .close-btn {
+  position: absolute;
+  cursor: pointer;
+  padding: 40px;
+  border-radius: 50%;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:hover, .close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn:active, .close-btn:active {
+  transform: scale(0.9); /* Shrinks the button on click */
+}
+
+/* Close button specific styles */
+.close-btn {
+  top: 20px;
+  right: 35px;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  z-index: 100;
+}
+
+/* Navigation button styles */
+.nav-btn {
+  top: 50%;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  transform: translateY(-50%);
+  user-select: none;
+}
+
+/* Left and right navigation button positions */
+.nav-btn.left {
+  left: 200px;
+}
+
+.nav-btn.right {
+  right: 200px;
+}
+
   
 /* Why us */
 .Why_us{
@@ -556,9 +671,9 @@ padding-top: 50px;
 
 }
 .Why_us h2{
-    font-size: 40px;
-    font-weight: 800;
-    font-family: "Dancing Script", cursive;
+    font-size: 50px;
+    font-weight: 200;
+    font-family: "DancingScript";
     pointer-events: none;   
   }
 
@@ -611,8 +726,8 @@ padding-top: 50px;
   }
   
   .faq-question.active .icon {
-    content: "−";
-    transform: rotate(90deg);
+    content: "";
+    transform: rotate(45deg);
   }
   
   @keyframes fadeIn {
@@ -631,11 +746,12 @@ padding-top: 50px;
   /* Contact*/
 
   .Contact h2{
-    font-size: 40px;
-    font-weight: 800;
-    font-family: "Dancing Script", cursive;
+    font-size: 50px;
+    font-weight: 200;
+    font-family: "DancingScript";
     pointer-events: none;
     margin-bottom: 20px;
+    padding-right: 35%;
   }
 
   .contact-section {
@@ -658,6 +774,7 @@ padding-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    font-family: "Lato";
   }
   
   .form-grid {
@@ -708,7 +825,7 @@ padding-top: 50px;
   
   .contact-image img {
     width: 300px;
-    height: 400px;
+    height: 380px;
     object-fit: cover;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -716,11 +833,19 @@ padding-top: 50px;
     margin-left: 25px;
   }
 
+  /* .contact-image{
+    padding-top: 10px;
+
+  } */
+
     /* Responsive for mobile */
   @media (max-width: 800px) {
     .contact-grid {
       grid-template-columns: 1fr;
       justify-items: center;
+    }
+    .Contact h2{
+     padding-right: 0;
     }
   
     .form-grid {
@@ -738,17 +863,18 @@ padding-top: 50px;
     }
   
     .contact-image img {
-      width: 100%;
+      width: 420px;
       height: auto;
+      margin: 10px;
     }
   }
   
   /* About us */
 
   .About_us h2{
-    font-size: 40px;
-    font-weight: 800;
-    font-family: "Dancing Script", cursive;
+    font-size: 50px;
+    font-weight: 200;
+    font-family: "DancingScript";
     pointer-events: none;
     margin-bottom: 20px;
   }
@@ -800,11 +926,18 @@ padding-top: 50px;
   
     .about-image img,
     .about-text {
-      width: 100%;
+      width: 450px;
       height: auto;
     }
   }
-  
+
+
+  /* Location */
+  .location{
+   align-items: center;
+   width: 100%;
+  }
+
   /* footer */
 
   .footer {
@@ -813,10 +946,11 @@ padding-top: 50px;
     padding-top: 30px;
     font-family: 'Poppins', sans-serif;
     margin-top: 30px;
+
   }
   
   .footer-container {
-    max-width: 1200px;
+    max-width: 90%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -834,7 +968,13 @@ padding-top: 50px;
   .footer-column {
     flex: 1;
     min-width: 200px;
+    font-size: 20px;
     
+  }
+
+  .footer-column a{
+    color: #ffffff;
+
   }
   
   .footer-column h4 {
@@ -870,6 +1010,13 @@ padding-top: 50px;
 
   }
 
+  .footer-column i{
+    margin-right: 10px;
+  }
+  /* .footer-column{
+    font-size: 20px;
+
+  } */
 
   /* Bottom Copyright */
   .footer-bottom {
@@ -882,8 +1029,19 @@ padding-top: 50px;
     font-size: 12px;
   }
 
+  .footer-column li:hover {
+    color: #ffffff; /* Red hover */
+  }
+
   .footer-column li a:hover {
     color: #ffffff; /* Red hover */
+  }
+
+
+/* Hover effect on social media icons */
+.Social-media a:hover {
+  color: #a00000; /* Change to a color of your choice */
+}
   
   @media (max-width: 768px) {
     .footer-container {
@@ -916,4 +1074,3 @@ padding-top: 50px;
       padding: 12px 10px;
     }
   }
-}
